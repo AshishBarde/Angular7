@@ -1,0 +1,15 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~mat-range-datepicker/theming';
+
+@import './styles/variables';
+@import './styles/mixins';
+@import './styles/utilities';
+@import './styles/common';
+
+@import './styles/form';
+@import './styles/data-tables';
+@import './styles/modal';
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeng/resources/themes/nova-light/theme.css';

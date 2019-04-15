@@ -1,0 +1,140 @@
+<div class="ng-data-table-wrap">
+     <div class="top-toolbar-wrap">
+        <div class="extra-toolbar">
+            <ng-content select="[button-toolbar]"></ng-content>
+        </div>
+        <!-- <div class="all-search-box" *ngIf="searchBox">
+            <label><input type="search" placeholder="Search" (keyup)="search()" #filterInputs /></label>
+        </div> -->
+        <div class="clearfix"></div> 
+    </div>
+    <table class="responsive">
+        <thead>
+            <tr>
+               
+                <th *ngIf="hasCheckbox" class="actioncheckbox">
+                 <span class="checkbox-wrap defult-checkbox">
+                     <mat-checkbox></mat-checkbox>
+                  </span>
+               <div class="actioncheckboxDiv"></div>
+            </th>
+            <th *ngIf="hasActionIcons" class="actioncheckbox1">
+               <div class="actioncheckboxDiv"></div>
+            </th>
+
+                <th *ngFor="let column of columns; let i = index" [attr.id]="column.key" [class.sortable]="column.sortable">
+                    <span (click)="sort(column.key)">
+                        {{column.title}} 
+                        <div class="sort-arrows" *ngIf="column.sortable">
+                            <i class="fa fa-sort" *ngIf="column.key != sortColumn"></i>
+                            <i class="fa fa-sort-asc" *ngIf="column.key == sortColumn && isDesc == false"></i>
+                            <i class="fa fa-sort-desc" *ngIf="column.key == sortColumn && isDesc == true"></i>
+                        </div>
+                    </span>
+                    <!-- <input *ngIf="column.filter" class="filter-input" type="text" placeholder="Filter" [attr.data-column]="column.key" (keyup)="searchByColumn(column.key)" #filterInputs />
+                    <div *ngIf="!column.filter" style="height: 35px;"></div> -->
+                </th>
+                <th *ngIf="hasActionButtons" class="actions">
+                    <span>ACTION</span>
+                    <div style="height: 35px;"></div>
+                </th>
+                       
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows; index as i; trackBy: trackByFn">
+            <td *ngIf="hasCheckbox" data-title="SelectAll">
+               <div class="action_buttons">
+                  <span (click)="edit(row)" class="checkbox-wrap defult-checkbox">
+                     <mat-checkbox></mat-checkbox>
+                  </span>
+               </div>
+            </td> 
+                 
+            <td *ngIf="hasActionIcons" data-title="">
+               <div class="action_buttons">
+                  <span>
+                  <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                  </span>
+               </div>
+            </td>
+
+                <td *ngFor="let column of columns" [attr.data-title]="column.title" [class.link]="column.link">
+                    <span class="data-el{{tagClass(row[column.key], column.isTag)}}" (click)="gotoLink(row, column)" [attr.title]="row[column.key]">
+                        {{echo(row, column)}}
+                    </span>
+                </td>
+              
+                <td *ngIf="hasActionButtons" data-title="ACTION">
+                    <div class="action_buttons" style="display: flex;" >
+                            <div *ngIf="showDetailsButton">
+                             <span class="showDetailsButton" (click)="showDetails(row)" >
+                                <i class="{{showDetailsIcon}}"></i>
+                            </span>
+                            </div>
+                           
+                            <div *ngIf="trackLocationButton">
+                                <span class="trackLocationButton" (click)="trackLocation(row)" >
+                                    <i class="{{trackLocationIcon}}"></i>
+                               </span>
+                            </div>
+                            <div *ngIf="printButton">
+                            <span class="printButton" (click)="print(row)" >
+                                <i class="{{printIcon}}"></i>
+                           </span>
+                           </div>
+                           <div *ngIf="copyButton">
+                             <span class="copyButton" (click)="copy(row)" >
+                                 <i class="{{copyIcon}}"></i>
+                            </span>
+                            </div>
+                            <div *ngIf="onBeHalfButton">
+                            <span class="onBeHalfButton" (click)="onBeHalf(row)" >
+                                <i class="{{onBeHalfIcon}}"></i>
+                           </span>
+                           </div>
+                           <div *ngIf="refreshButton">
+                            <span *ngIf="refreshButton" class="refresh" (click)="refresh(row)">
+                                <i class="{{refreshButtonIcon}}"></i>
+                            </span>
+                          </div>
+                           <div *ngIf="editButton">
+                            <span *ngIf="row.status!=='Delivered'" class="edit" (click)="edit(row)" >
+                            <i class="{{editButtonIcon}}"></i>
+                            </span>
+                           </div>
+                           <div *ngIf="deleteButton">
+                            <span *ngIf="deleteButton" class="delete" (click)="delete(row)">
+                                <i class="{{deleteButtonIcon}}"></i>
+                            </span>
+                          </div>
+                    </div>
+                </td>
+            </tr>
+           <tr *ngIf="rows.length == 0">
+                <td *ngIf="!hasActions" [attr.colspan]="columns.length" class="no-records">
+                  <img src="assets/img/noDataFound.png" alt="notFound">
+                    </td>
+                <td *ngIf="hasActions" [attr.colspan]="columnsLength" class="no-records">
+                   <img src="assets/img/noDataFound.png" alt="notFound">
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <div class="bottom-bar-wrap">
+        <div class="table-info" *ngIf="totalRows !== 0">Displaying item : {{first}} - {{last}} of {{totalRows}}</div>
+        <div class="pagination-wrap">
+            <ng-pagination [isAjax]="isAjax" [totalRows]="totalRows" [perPage]="perPage" (paginateRecords)="paginateRecords($event)"></ng-pagination>
+        </div>
+        <div class="per-page-select-wrap">
+            <select (change)="onPerPage($event)">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div class="clearfix"></div>        
+    </div>
+</div>

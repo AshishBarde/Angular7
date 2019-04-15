@@ -1,0 +1,67 @@
+.headdingsection{
+        // box-shadow: rgb(204, 204, 204) 2px 2px 2px 2px;
+       // min-height: 65px;
+        font-size: 22px;
+       // padding: 15px 20px;
+}
+.headdingsection2{
+    margin-top:5px;
+}
+.activepage{
+    color:#f59371;
+}
+.gomap{
+    text-align: center;
+    min-height: 200px;
+    border:1px solid red;
+    margin-top: 5px;
+}
+.dropdown-label{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.box {
+    margin: 30px 0px 6px 0px;
+    border: solid 1px #c3c3c3;
+}
+.box .box-header {
+    color: #000;
+    font-size: 13px;
+    overflow: hidden;
+    height: 46px;
+    border-bottom: 1px solid #c3c3c3;
+}
+.box .box-content {
+    padding: 10px;
+    background: white;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    min-height: 50px;
+    height: auto;
+}
+.box .box-header h2 {
+    float: left;
+    padding: 10px 0px;
+    margin: 0px 0px 0px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: calc(100% - 200px);
+    line-height: 25px;
+}
+.box .box-header .box-icon {
+    float: right;
+}
+.box .box-header .box-icon i {
+    display: inline-block;
+    color: #757676;
+    text-align: center;
+    width: 40px;
+    transition: all 0.1s ease-in-out 0s;
+    text-decoration: none;
+    height: 40px;
+    padding: 6px 0px;
+    font-size: 20px;
+    background: none;
+    border: none;
+}

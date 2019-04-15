@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <button class="sidenav-toggle-btn" (click)="toogleButton()">   
+      <i class="material-icons">
+          menu
+          </i>       
+    <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+  </button>
+  <span class="spacer"></span>
+<!--
+  <i class="fa fa-home notifications-toggle-btn" aria-hidden="true"></i>
+  <i class="fa fa-question-circle notifications-toggle-btn" aria-hidden="true"></i>
+  <i class="fa fa-shopping-cart notifications-toggle-btn" aria-hidden="true"></i>
+  <i class="fa fa-envelope  notifications-toggle-btn small-icon" aria-hidden="true"></i>
+  <i class="fa fa-bell notifications-toggle-btn small-icon" aria-hidden="true"></i>
+-->
+
+  <div class="logged-user-info" (click)="loginUserclick()">
+      <div class="user-image"><i class="material-icons">perm_identity</i></div>
+      <div class="user-details">
+          <div class="user-name">John Deo</div>
+         <div class="user-role">User</div>
+      </div>
+      <div class="arrow">
+        <i class="fa fa-angle-down angle-arrow down-arrow" *ngIf="downArrow"></i>
+        <i class="fa fa-angle-up angle-arrow down-arrow"  *ngIf="upArrow"></i>
+      </div>
+
+    </div>
+
+    <div class="login-user-dropdown" *ngIf="showLoginUSerDropdown" (clickOutside)="onClickedOutside($event,row)"
+    [exclude]="'.logged-user-info'">
+      <ul>
+        <li (click)="goToProfile()">
+         My Profile
+        </li>
+        <li (click)="changepassword()">
+         Change Password
+        </li>
+        <li (click)="logout()">
+          Logout
+        </li>
+      </ul>
+    </div>
+    
+  </mat-toolbar>

@@ -1,0 +1,82 @@
+@import '../../../../../../styles/variables';
+@import '../../../../../../styles/mixins';
+
+:host ::ng-deep {
+    ul.simple-pagination {
+        list-style: none;
+    }
+
+    .simple-pagination {
+        display: inline-block;
+        overflow: hidden;
+        padding: 0 5px 5px 0;
+        margin: 0;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            float: left;
+        }
+    }
+
+    span.ellipse.clickable {
+        cursor: pointer;
+    }
+
+    .ellipse input {
+        width: 3em;
+    }
+
+    .compact-theme {
+        span {
+            cursor: pointer;
+        }
+
+        a, span {
+            @include applyFont($fontSize: 14px);
+            display: block;
+        }
+
+        a:hover {
+            text-decoration: none;
+            //background: #1d7ab4;
+            color: #018EB9;
+        }
+        
+        li {
+            &:not(.disabled):not(.active) span:hover {
+                text-decoration: none;
+                background: #1d7ab4;
+            }  
+
+            span, a {
+                padding: 5px 10px 5px;
+                color: #252525;
+            }
+
+            &.active {
+                span {
+                   // background: #018EB9;
+                    color: #018EB9;
+                }
+            }
+        }
+
+        .current {
+            cursor: default;
+        }
+
+        .ellipse {
+            background: transparent;
+            padding: 0 10px;
+            cursor: default;
+        }
+    }
+}
+
+

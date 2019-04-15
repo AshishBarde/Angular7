@@ -1,0 +1,51 @@
+<div class="logo-wrap" (click)="gotohome()">
+  <div>
+      <img src="" class="main-logo" alt="Logo" [title]="logotooltip"/>
+      <!-- <a class="linkblock" (click)="callDeepink()">{{deeplink}}</a> -->
+  </div>
+  <img src="" class="collapsed-logo img-fluid" alt="Logo" title="Logo" />
+</div>
+
+    <mat-list role="list">
+        <a mat-list-item role="listitem" [routerLink]="['dashboard']" routerLinkActive="active">
+            <i class="fa fa-home  menu-icon" aria-hidden="true"></i>
+              <span> Audit Trail </span>
+        </a>
+         <!-- <a mat-list-item role="listitem" [routerLink]="['Listen']" routerLinkActive="active">
+            <i class="fa fa-headphones  menu-icon" aria-hidden="true"></i>
+              <span> Listen </span>
+        </a>
+         <a mat-list-item role="listitem" [routerLink]="['POI']" routerLinkActive="active">
+            <i class="fa fa-user  menu-icon" aria-hidden="true"></i>
+              <span> POI </span>
+        </a> 
+
+       <a mat-list-item role="listitem" (click)="onItemSelected();" routerLinkActive="active">
+          <i class="fa fa-qrcode  menu-icon" aria-hidden="true"></i>
+            <span> nQube</span> 
+            <i *ngIf="!expanded" class="fa fa-angle-down iconsupdown" aria-hidden="true"></i>
+           <i *ngIf="expanded" class="fa fa-angle-up iconsupdown" aria-hidden="true"></i>
+        </a>
+             <div *ngIf="expanded" class="mat-submenu">
+                  <a mat-list-item role="listitem" [routerLink]="['Lexicon']" routerLinkActive="active">
+                        <span>Lexicon</span>
+                   </a>
+                   <a mat-list-item role="listitem" [routerLink]="['RelevancyModel']" routerLinkActive="active">
+                        <span> Relevancy Model</span>
+                   </a>                  
+            </div> 
+         <a mat-list-item role="listitem" (click)="onItemSelected1();" routerLinkActive="active">
+          <i class="fa fa-qrcode  menu-icon" aria-hidden="true"></i>
+            <span> Configure </span> 
+             <i *ngIf="!expanded1" class="fa fa-angle-down iconsupdown" aria-hidden="true"></i>
+           <i *ngIf="expanded1" class="fa fa-angle-up iconsupdown" aria-hidden="true"></i>
+        </a>
+             <div *ngIf="expanded1" class="mat-submenu">
+                  <a mat-list-item role="listitem" [routerLink]="['MyProjects']" routerLinkActive="active">
+                        <span>My Projects</span>
+                   </a>
+                   <a mat-list-item role="listitem" [routerLink]="['Configpage']" routerLinkActive="active">
+                        <span> Config Page </span>
+                   </a>                  
+            </div> -->
+    </mat-list>

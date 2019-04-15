@@ -1,0 +1,91 @@
+
+<div class="top-section">
+    <div class="col-md-12 headdingsection">
+        <app-heading-section heading="My Profile"> 
+              
+        </app-heading-section>
+    </div>
+    <!--<div class="clearfix"></div>-->
+</div>
+<div class="col-12 col-md-12">
+        <div class="row ">
+           <div class="col-md-4 col-12 headdingsection2">
+                   <h4>POI / <span class="activepage">My Profile</span></h4>
+           </div>
+           
+            <div class="col-12 col-md-8">
+                 <mat-form-field>
+                     <input matInput placeholder="Input">
+                 </mat-form-field>
+           </div>
+      </div>
+ </div>  
+<div class="col-md-12 col-12 received-pckg-wrapper middle-section">
+   <mat-card style=" margin:0px 0;">
+     <div class="row">
+         <div class="col-12 col-md-6">
+            <div class="row">
+             <div class="col-md-3">
+                 <img src="assets\img\defaultPOI.png" class="img-fluid" alt="defaultPOI" />
+             </div>
+               <div class="col-md-9">
+                  <h2 class="clientnameh2">Name Here</h2>
+             </div>
+            </div>
+         </div>
+          <!--<div class="col-12 col-md-6">-->
+         <div class=" col-12 col-md-6 icons" align="end">
+           <table class="d-flex justify-content-end">
+               <tr>
+                   <td><p (click)="twitterclickEvent()" [ngClass]="twitterstatus ? 'twitteractiveclass' : 'deactivatecolor'">
+                        <i class="fa fa-twitter" aria-hidden="true" title="twitter"></i> </p>
+                    </td>
+                    <td><p (click)="facebookclickEvent()" [ngClass]="facebookstatus ? 'facebookactiveclass' : 'deactivatecolor'">
+                        <i class="fa fa-facebook" aria-hidden="true" title="facebook"></i> </p>
+                    </td> 
+                     <td><p (click)="youtubeclickEvent()" [ngClass]="youtubestatus ? 'youtubactiveclass' : 'deactivatecolor'">
+                        <i class="fa fa-play" aria-hidden="true" title="youtube"></i> </p>
+                    </td> 
+                     <td><p (click)="instagramclickEvent()" [ngClass]="instagramstatus ? 'activatecolor' : 'deactivatecolor'">
+                        <i class="fa fa-instagram" aria-hidden="true" title="instagram"></i> </p>
+                    </td>    
+                     <td><p (click)="tumblrclickEvent()" [ngClass]="tumblrstatus ? 'tumbrlactiveclass' : 'deactivatecolor'">
+                        <i class="fa fa-tumblr" aria-hidden="true" title="tumblr"></i> </p>
+                    </td>
+                     <td><p (click)="redditclickEvent()" [ngClass]="redditstatus ? 'redditactiveclass' : 'deactivatecolor'">
+                        <i class="fa fa-reddit" aria-hidden="true" title="reddit"></i> </p>
+                    </td>    
+                     <td>
+                     <p (click)="vkclickEvent()" [ngClass]="vktatus ? 'vkactiveclass' : 'deactivatecolor'">
+                        <i class="fa fa-vk" aria-hidden="true" title="vk"></i> </p>
+                    </td> 
+                    <td><p (click)="neosclickEvent()" [ngClass]="neosstatus ? 'activatecolor' : 'deactivatecolor'">
+                        <i class="fa fa-neos" aria-hidden="true" title="neos"></i> </p>
+                    </td>                     
+               </tr>
+           </table>
+           <p class="d-flex justify-content-end">Social Media Risk Score</p>
+         </div>
+          <!--</div>-->
+     </div>
+     <hr/>
+
+    <mat-toolbar>
+       <a mat-list-item  [routerLink]="['dashboard']" routerLinkActive="active">
+            <!--<i class="fa fa-headphones  menu-icon" aria-hidden="true"></i>-->
+              <span> dashboard </span>
+        </a>
+         <a mat-list-item [routerLink]="['Profile']" routerLinkActive="active">
+            <!--<i class="fa fa-headphones  menu-icon" aria-hidden="true"></i>-->
+              <span> Profile </span>
+        </a>
+         <a mat-list-item  [routerLink]="['Activity']" routerLinkActive="active">
+            <!--<i class="fa fa-headphones  menu-icon" aria-hidden="true"></i>-->
+              <span> Activity </span>
+        </a>
+    </mat-toolbar>
+ </mat-card>  
+</div>
+     <div class="col-12 col-md-12">
+          <router-outlet></router-outlet>
+     </div>       

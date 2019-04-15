@@ -1,0 +1,17 @@
+ <mat-card style=" margin:0px 0;">
+           <h2> BASIC INFORMATION (TBD)</h2>
+          <div class="row">
+                    <div class="col-md-12 col-12">                        
+                        <ng-data-tables [columns]="columns" [rows]="records" [totalRows]="totalRows"
+                        [hasActions]="hasActions" [hasActionButtons]="hasActionButtons" 
+                        [editButton]="editButton" [copyButton]="copyButton" 
+                         
+                        [columnsLength]="columnsLength"
+                        (edit)="editDestination($event)">                        
+                    </ng-data-tables>
+                    </div>
+        </div>
+    <button class="app-btn mat-button orange-button2"> see All Posts </button>
+ </mat-card>
+
+       

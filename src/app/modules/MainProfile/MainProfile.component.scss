@@ -1,0 +1,93 @@
+p{
+    text-align: center;
+
+}
+td > p {
+        margin-top: 0;
+        margin-bottom: 0px !important;
+        margin-left: 5px;
+         cursor: pointer;
+}
+.mat-form-field-infix {
+   border-top: 0.5em solid transparent !important;
+}
+.icons{
+    padding:5px 0px 0px 0px;
+}
+.fa{
+    content: "\f099";
+    font-size: 21px;
+    margin: 5px;
+    min-width: 20px;
+}
+
+.fa[_ngcontent-c9] {
+    content: "";
+    font-size: 21px;
+    margin: 5px;
+    min-width: 20px;
+}
+
+
+.activatecolor{
+     background: #f59371;
+     border-radius: 25% !important;
+     color:#fff;
+}
+.deactivatecolor{
+    background: #A9A9A9;
+    border-radius: 25% !important;
+    color:#fff;
+}
+.twitteractiveclass{
+     background:#7cc6f9;
+     border-radius: 25% !important;
+     color:#fff;
+}
+.facebookactiveclass{
+    background: #51659b;
+     border-radius: 25% !important;
+     color:#fff;
+}
+.youtubactiveclass{
+    background: #e12b26;
+     border-radius: 25% !important;
+     color:#fff;
+}
+.tumbrlactiveclass{
+    background: #34495e;
+     border-radius: 25% !important;
+     color:#fff;
+}
+.redditactiveclass{
+    background: #ff350c;
+     border-radius: 25% !important;
+     color:#fff;
+}
+.vkactiveclass{
+    background: #4c75a3;
+     border-radius: 25% !important;
+     color:#fff;
+}
+
+.clientnameh2{
+       font-size: 33px;
+       color: #485b6c;
+       margin-top: 0;
+       font-weight: 500
+}
+
+/* navbar */
+
+mat-toolbar{
+        max-height: 50px;
+     a{
+        padding:0px 15px;
+        mat-list-item{
+             font-size:18px;
+        }
+      &:hover, &.active{
+          text-decoration: underline;
+      }
+     }
+}
